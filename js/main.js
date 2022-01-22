@@ -1,7 +1,9 @@
 // API KEY
 const API_KEY = '1b2b0a4654bbc4d9a014edde73eb083e';
 
-const _weather = document.getElementById('weather')
+// const _weather = document.getElementById('weather')
+const _container = document.querySelector('.container')
+const _spinner = document.querySelector('.loader')
 
 const fetchData = position =>{
     const {latitude, longitude} = position.coords;
@@ -10,7 +12,10 @@ const fetchData = position =>{
         `https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${latitude}&lon=${longitude}&appid=${API_KEY}`)
     .then(response =>  response.json())
     .then(data => setWeatherData(data))
-    
+
+    _spinner.style.display = 'none';
+    _container.style.display = "flex";
+
     // _weather.innerHTML += `<p>La temperatura es ${data}</p>`
     console.log(position)
 }
@@ -43,6 +48,7 @@ const getDate = () =>{
     return ` ${date.getDate()}-${('0' + (date.getMonth()+1)).slice(-2)}-${date.getFullYear()} `
     
 }
+
 const onLoad = () =>{
     navigator.geolocation.getCurrentPosition(fetchData);
 }
