@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;600&display=swap');
+
+.container{
+    display: flex;
+    height:  100vh;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Oswald', sans-serif;
+
+}
+
+.todo{
+    display: flex;
+    /* width: 300px; */
+    background-color: #456990;
+    color: #F1F5F1;
+    padding: 1em;
+    border-radius: 0.3em;
+    border: 1px solid;   
+
+}
+.block{
+    /* display: flex; */
+    flex-direction: row;
+    padding: 0.5em;
+    /* text-align: center; */
+    font-size: 1em;
+}
+
+.block:first-child{
+    background-color: #E4FDE1;
+    color: #000;
+    text-align: center;
+    border-radius: 0.3em;
+}
+
+.info-Weather{
+    color: #000;
+    display: flex;
+    margin-bottom: 0.5em;
+}
+
+.weather-data{
+    color: #F1F5F1;
+    margin-left: 0.1em;
+}
+
+#location{
+    font-weight: bold;
+    font-size: 1.8em;
+}
